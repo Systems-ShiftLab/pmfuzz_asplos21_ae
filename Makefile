@@ -227,6 +227,7 @@ buggy-redis: $(BUILD_DIR).buggy_redis_deps
 	$(eval EXTRA_LIBS := $(filter-out -lpmfuzz,$(EXTRA_LIBS)))
 	$(eval EXTRA_LIBS := $(EXTRA_LIBS) -lfakepmfuzz)
 	@printf '  %b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
+	cp -r vendor/redis-3.2-nvml/deps/jemalloc vendor/redis-3.2-nvml-buggy/deps/
 	(cd $(BUGGY_REDIS_DIR) && $(MAKE) USE_PMDK=yes STD=-std=gnu99 \
 		PMFUZZ_CFLAGS="$(EXTRA_CFLAGS)" PMFUZZ_LIBS="$(EXTRA_LIBS) \
 		$(EXTRA_LDFLAGS)")
