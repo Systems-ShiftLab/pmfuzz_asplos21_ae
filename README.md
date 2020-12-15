@@ -7,11 +7,6 @@ Then, PMFuzz feed these test cases to PM programs, and use existing testing tool
 
 ## Description
 
-### How to access.
-
-We maintain a GitHub repository at [https://github.com/Systems-ShiftLab/pmfuzz_asplos21_ae](https://github.com/Systems-ShiftLab/pmfuzz_asplos21_ae) where we provide a more detailed README.
-There is also an archived version at [https://doi.org/10.5281/zenodo.4321778](https://doi.org/10.5281/zenodo.4321778). 
-
 
 ### Hardware dependencies.
 1. CPU: Intel Xeon Cascade Lake 
@@ -55,11 +50,13 @@ This artifact has the following structure:
 
 
 **Setup Environment.**
-PMFuzz requires the environment variable for Pintool is set before execution.
-To set the variable, please execute the following command:
+PMFuzz requires the environment variable for `PIN_ROOT` and `PMEM_MMAP_HINT` are set before execution.
+To set these variables, please execute the following command:
+
 
 ```shell
 export PIN_ROOT=<PMFuzz Root>/vendor/pin-3.13
+export PMEM_MMAP_HINT=0x10000000000
 ```
 
 It also requires disabling ASLR and core dump notifications disabled (needs to reset after power cycle). 
@@ -72,7 +69,7 @@ echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 
 
 **Setup Software Dependencies.**
-To run PMFuzz, please make sure that you have all the dependencies from Section \ref{subsubsec:sw_dep} installed. If some dependencies are not met, you can install them with our script:
+To run PMFuzz, please make sure that you have all the prior dependencies installed. If some dependencies are not met, you can install them with our script:
 
 ```
 cd <PMFuzz Root>
