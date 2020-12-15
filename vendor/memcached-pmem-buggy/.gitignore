@@ -1,0 +1,15 @@
+*~
+*.o
+*.log
+*.status
+*.in
+.deps
+Makefile
+autom4te.cache
+config.h
+stamp-h1
+memcached
+memcached-debug
+sizes
+testapp
+timedrun

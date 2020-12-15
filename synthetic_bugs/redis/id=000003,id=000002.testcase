@@ -1,0 +1,4 @@
+set abc val
+get abc
+bitcount abc
+shutdown

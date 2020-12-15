@@ -1,0 +1,29 @@
+stats
+version
+set key1 0 900 5
+value
+add key1 0 60 5
+value
+add key2 0 60 5
+value
+prepend key 0 60 15
+012345678901234
+prepend key1 0 60 15
+012345678901234
+append key1 0 60 15
+012345678901234
+delete key
+delete key1
+set key1 0 100 3
+100
+incr key1 100
+incr key4 100
+decr key4 50
+decr key1 500
+get key
+get key1
+replace key1 0 60 5
+10000
+replace key10 0 60 5
+10000
+shutdown

@@ -1,0 +1,5 @@
+set some value
+rename some other
+exists some
+exists other
+shutdown

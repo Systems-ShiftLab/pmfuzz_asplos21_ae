@@ -1,0 +1,15 @@
+*.o
+.vscode
+out
+*.so
+*.a
+*.log
+*~
+autom4te.cache/
+stamp-h1
+.deps/
+memcached
+memcached-debug
+sizes
+testapp
+timedrun
