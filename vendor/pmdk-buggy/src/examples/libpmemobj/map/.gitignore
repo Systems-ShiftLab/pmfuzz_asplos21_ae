@@ -1,0 +1,10 @@
+mapcli
+data_store
+kv_server
+*.tmp
+*.log
+*.strace
+*.trace
+*.cfg
+
+result/

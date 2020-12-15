@@ -1,0 +1,3 @@
+SET samplekey samplevalue
+GET samplekey
+SHUTDOWN
