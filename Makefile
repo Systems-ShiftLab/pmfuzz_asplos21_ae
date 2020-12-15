@@ -215,7 +215,7 @@ redis: $(BUILD_DIR).redis_deps
 	$(MAKE) $(BIN_DIR)redis-server $(BIN_DIR)redis-cli
 
 $(BIN_DIR)buggy_redis-server:
-	$(QUIET_LN)ln -Lfs $(BUGGY_REDIS_DIR)redis-server $@
+	$(QUIET_LN)ln -Lfs $(BUGGY_REDIS_DIR)src/redis-server $@
 
 $(BUILD_DIR).buggy_redis_deps:
 	@printf '  %b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
