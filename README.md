@@ -2,11 +2,7 @@
 
 ## Abstract
 
-PMFuzz is a test case generator for PM programs, aiming for high coverage on crash consistency bugs. 
-
-The key idea of PMFuzz is to perform a targeted fuzzing on PM-related code regions.
-
-The generated test cases include both program inputs and initial PM images (both normal images and crash images). 
+PMFuzz is a test case generator for PM programs, aiming for high coverage on crash consistency bugs. The key idea of PMFuzz is to perform a targeted fuzzing on PM-related code regions. The generated test cases include both program inputs and initial PM images (both normal images and crash images). 
 Then, PMFuzz feed these test cases to PM programs, and use existing testing tools (XFDetector and PMemcheck) to detect crash consistency bugs. 
 
 ## Description
