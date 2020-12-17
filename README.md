@@ -59,6 +59,12 @@ export PIN_ROOT=<PMFuzz Root>/vendor/pin-3.13
 export PMEM_MMAP_HINT=0x10000000000
 ```
 
+The experiemnts requires a PM device (e.g., `/dev/pmem0`) mounted at `/mnt/pmem0`. To do so, please execute the following commands:
+
+```shell
+sudo mount -o dax /dev/pmem0 /mnt/pmem0 
+```
+
 It also requires disabling ASLR and core dump notifications disabled (needs to reset after power cycle). 
 To disable them, please execute the follow commands:
 
