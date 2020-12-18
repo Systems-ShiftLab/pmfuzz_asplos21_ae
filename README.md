@@ -160,6 +160,12 @@ To change CWD to the artifact root, please execute the following command:
 cd /ae/master_src/pmfuzz
 ```
 
+All PMFuzz scripts also read the environment variable `JOBS` to run make in parallel (with the default value of -j8). To set it, you can export the variable in your shell session, e.g.:
+```shell
+export JOBS=-j100
+```
+
+
 To run performance evaluation and automatically schedule fuzzing jobs across all  the 6 servers, please run the following commands on the main server:
 
 ```shell
