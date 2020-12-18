@@ -130,7 +130,7 @@ function run_xfd {
 	fi
 
     start=$SECONDS
-    if eval "$xfd_cmd" 2>&1 | tail -n+28 | tee -a "$logf" | grep -Eq "$LOOK_FOR"; then
+    if eval "$xfd_cmd" 2>&1 | stdbuf -i0 -o0 -e0 tail -n+28 | stdbuf -i0 -o0 -e0 tee -a "$logf" | grep -Eq "$LOOK_FOR"; then
         echo "Bug confirmed in $(($SECONDS-$start)) seconds using XFD."
     else
         echo "No bug found"
