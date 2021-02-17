@@ -15,7 +15,7 @@ HOUR = 60 * MINUTE
 LOG_F='/var/tmp/ae_log'
 
 user = 'asplos21ae'
-hosts = ['shiftlab%02d.cs.virginia.edu' % i for i in [8, 9, 10, 11, 13, 14]]
+hosts = ['shiftlab%02d.cs.virginia.edu' % i for i in [8, 10, 11, 13, 14]]
 dests = [f'{user}@{host}' for host in hosts]
 ssh_cmds = [f'ssh -p2222 {dest}' for dest in dests]
 
@@ -59,7 +59,7 @@ for host in hosts:
     iter += 1
 
 # How long each config would run
-RUNTIME = 2 * HOUR
+RUNTIME = 4 * HOUR
 
 def echo(msg, prefix='++ '):
     print(prefix + msg)

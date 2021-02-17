@@ -27,11 +27,11 @@ from matplotlib.ticker import (
 )
 
 ## Variables
-hosts         = ['http://shiftlab%02d.cs.virginia.edu:8900' % i for i in [8, 9, 10, 11, 13, 14]]
+hosts         = ['http://shiftlab%02d.cs.virginia.edu:8900' % i for i in [8, 10, 11, 13, 14]]
 wrklds        = ['hashmap_tx', 'hashmap_atomic', 'btree', 'rtree', 'rbtree', 'skiplist', 'memcached', 'redis']
 wrklds_dnames = ['Hashmap Tx', 'Hashmap Atomic', 'BTree', 'RTree', 'RBTree', 'Skiplist', 'Memcached', 'Redis']
-cfgs          = ['complete', 'primitivebaseline', 'baseline']
-cfgs_dname    = ['PMFuzz', 'Baseline', 'Optimized Baseline']
+cfgs          = ['complete', 'primitivebaseline', 'baseline', 'imgfuzz']
+cfgs_dname    = ['PMFuzz', 'Baseline', 'Optimized Baseline', 'Img Fuzzing']
 
 ## Config Matplotlib
 font = {
@@ -88,11 +88,12 @@ for url in get_file_list():
     tokens = os.path.basename(url).split('%2C')
     
     wrkld = tokens[0]
-    cfg = tokens[1]
+    cfg = tokens[1].replace('.progress', '')
 
     df = pd.read_csv(url, header=0, names=['tc_total', 'pm_tc_total', 'total_path', 'total_pm_path', 'exec_rate', 'actual_cases'])
     df.index = df.index - np.min(df.index)
 
+    print(f"Fixing URL {url}")
     all_results[wrkld][cfg] = fix_df(df)
 
 fig, axs = plt.subplots(2, 4, sharex=True, figsize=(14,5))
@@ -107,6 +108,7 @@ markers = {
 }
 
 iter = 0
+
 for wrkld in wrklds:
     row = int(iter/4)
     col = iter%4
@@ -130,10 +132,12 @@ for wrkld in wrklds:
             axs[row, col].plot([0], [0], label=cfg)
 
     wrkld_dname = wrklds_dnames[wrklds.index(wrkld)]
+    axs[row, col].set_xlim([0, 14400])
+#    axs[row, col].set_xbound(0, 1400)
+    print("xlims = " + str(axs[row,col].get_xlim()))
     axs[row,col].set_title(wrkld_dname)
     axs[row,col].grid(axis='both')
     # axs[row,col].set_ylim(0, axs[row, col].get_ylim()[1])
-
     iter += 1
 
 handles, leglabels = axs[0,0].get_legend_handles_labels()

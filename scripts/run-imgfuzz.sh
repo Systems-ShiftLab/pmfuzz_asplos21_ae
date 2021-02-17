@@ -114,8 +114,8 @@ function Main {
     rm ${dest}/$wrkld,imgfuzz.progress || { :; }
 
     while true; do
-        cnt=$(find ${resultsdir} -mindepth 1 -name 'pm_map_id*' -exec sha256sum {} \; | cut -d " " -f 1 | uniq -c | wc -l)
-        echo "$(date +%s),$cnt,$cnt,0,0,0,0" >> ${dest}/$wrkld,imgfuzz.progress
+        cnt=$(find ${resultsdir} -mindepth 1 -name 'pm_map_id*' -exec sha256sum {} \; | grep -v 'pm_map_id:000001' | cut -d " " -f 1 | uniq -c | wc -l)
+        echo "$(date +%s),$((cnt+1)),$cnt,0,0,0,0" >> ${dest}/$wrkld,imgfuzz.progress
         sleep 2
     done
 }
