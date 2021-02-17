@@ -1,15 +1,16 @@
-This is the artifact repository for PMFuzz. 
+Artifact repository for PMFuzz. 
+
+# PMFuzz
 
 For most up-to-date version of PMFuzz please go to
 [https://github.com/https://github.com/Systems-ShiftLab/pmfuzz](https://github.com/Systems-ShiftLab/pmfuzz).
 
-If you found PMFuzz useful in your research, please cite our work as:
+If you find PMFuzz useful in your research, please cite:
 
 > Sihang Liu, Suyash Mahar, Baishakhi Ray, and Samira Khan  
 > [PMFuzz: Test Case Generation for Persistent Memory Programs](https://asplos-conference.org/abstracts/asplos21-paper8-extended_abstract.pdf)  
 > The International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2021
 
-# PMFuzz
 
 ## Abstract
 
@@ -24,7 +25,7 @@ PMemcheck) to detect crash consistency bugs.
 ## Description
 
 
-### Hardware dependencies.
+### Hardware dependencies (per host).
 1. CPU: Intel Xeon Cascade Lake 
 2. DRAM: 32 GB at least
 3. Persistent Memory: Intel DCPMM 
@@ -34,8 +35,8 @@ PMemcheck) to detect crash consistency bugs.
 The performance evaluation involves proprietary hardware and a large
 number of CPU cores for multi-threaded fuzzing. And, each workload has
 four design points for comparison and needs to be fuzzed continuously
-for 4 hours. The artifact repository provides that can schedule jobs
-on a cluster of machines to speed up the evaluation.
+for 4 hours. The artifact repository provides scripts that can schedule 
+jobs on a cluster of machines to speed up the evaluation.
 
 
 Software dependencies.
@@ -324,3 +325,7 @@ ipcrm -a
 [config_examples]: src/pmfuzz/configs/examples/
 [pmfuzz-fuzz.py]: src/pmfuzz/pmfuzz-fuzz.py
 [1]: src/pmfuzz/README.md
+
+# Bugs, comments and questions
+If you have any questions about this artifact repository or PMFuzz, please open an issue at the main PMFuzz repository here: [https://github.com/Systems-ShiftLab/pmfuzz](https://github.com/Systems-ShiftLab/pmfuzz)
+or email the authors at pmfuzz@suyashmahar.com or sihangliu@virginia.edu
