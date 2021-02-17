@@ -27,7 +27,7 @@ from matplotlib.ticker import (
 )
 
 ## Variables
-hosts         = ['http://shiftlab%02d.cs.virginia.edu:8900' % i for i in [8, 10, 11, 13, 14]]
+hosts         = ['host1', 'host2']
 wrklds        = ['hashmap_tx', 'hashmap_atomic', 'btree', 'rtree', 'rbtree', 'skiplist', 'memcached', 'redis']
 wrklds_dnames = ['Hashmap Tx', 'Hashmap Atomic', 'BTree', 'RTree', 'RBTree', 'Skiplist', 'Memcached', 'Redis']
 cfgs          = ['complete', 'primitivebaseline', 'baseline', 'imgfuzz']

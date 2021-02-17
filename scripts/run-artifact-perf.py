@@ -11,11 +11,11 @@ from multiprocessing.pool import ThreadPool
 MINUTE = 60 # seconds
 HOUR = 60 * MINUTE
 
-
 LOG_F='/var/tmp/ae_log'
 
+## NOTE: Make sure this variables are set correctly
 user = 'asplos21ae'
-hosts = ['shiftlab%02d.cs.virginia.edu' % i for i in [8, 10, 11, 13, 14]]
+hosts = ['host1.university.edu', 'host2.university.edu']
 dests = [f'{user}@{host}' for host in hosts]
 ssh_cmds = [f'ssh -p2222 {dest}' for dest in dests]
 
