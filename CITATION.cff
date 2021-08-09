@@ -10,7 +10,6 @@ authors:
 - family-names: "Khan"
   given-names: "Samira"
 title: " PMFuzz: Test Case Generation for Persistent Memory Programs"
-version: 1.0.0
 doi: 10.5281/zenodo.4322285
 date-released: 2021-03-07
 url: "https://github.com/Systems-ShiftLab/pmfuzz_asplos21_ae"
