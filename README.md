@@ -1,10 +1,9 @@
-Artifact repository for PMFuzz. 
-
-# PMFuzz
-
 For most up-to-date version of PMFuzz please go to
 [https://github.com/Systems-ShiftLab/pmfuzz](https://github.com/Systems-ShiftLab/pmfuzz).
 
+--
+
+# PMFuzz
 If you find PMFuzz useful in your research, please cite:
 
 > Sihang Liu, Suyash Mahar, Baishakhi Ray, and Samira Khan  
